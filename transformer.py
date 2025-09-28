@@ -16,9 +16,38 @@ head_size = 32
 eval_iters = 200
 dropout = 0.2
 # -------------
+# hyperparameters for Colab
+# batch_size = 64
+# block_size = 128
+# max_iters = 5000
+# eval_interval = 500
+# learning_rate = 3e-4
+# device = "cuda" if torch.cuda.is_available() else "cpu"
+# n_embd = 256
+# n_head = 8
+# head_size = n_embd // n_head  
+# n_layer = 6
+# eval_iters = 200
+# dropout = 0.2
+# -------------
+# hyperparameters for a Laptop
+# batch_size = 8
+# block_size = 8
+# max_iters = 1000
+# eval_interval = 500
+# learning_rate = 3e-4
+# device = "cuda" if torch.cuda.is_available() else "cpu"
+# n_embd = 50
+# n_head = 2
+# n_layer = 2
+# head_size = 5
+# eval_iters = 200
+# dropout = 0.3
+# -------------
 
 torch.manual_seed(1337)
 
+# UNCOMMENT if you dont have the tinyShakesPeare dataset yet
 # wget https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt
 with open("input.txt", "r", encoding="utf-8") as f:
     text = f.read()
