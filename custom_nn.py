@@ -144,6 +144,7 @@ class Block(nn.Module):
         return x
 
 
+# 
 class MyLinear(nn.Module):
 
     def __init__(self, in_features, out_features, bias=True):
@@ -181,7 +182,6 @@ class BigramLanguageModel(nn.Module):
         self.blocks = nn.Sequential(
             *[Block(n_embd, n_head=n_head) for _ in range(n_layer)]
         )
-        self.ln_f = nn.LayerNorm(n_embd)
         self.lm_head = nn.Linear(n_embd, vocab_size)
 
     def forward(self, idx, targets=None):
